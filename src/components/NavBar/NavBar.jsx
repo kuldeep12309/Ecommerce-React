@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useMemo} from "react";
 import { useSelector } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -11,11 +11,18 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
-  const cartItems = useSelector((state) => state.cart.items);
-  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const items = useSelector((state) => state.cart.items);
+  const totalQuantity = useMemo(() => {
+  let sum = 0;
+  
+  for (let item of items) {
+    sum = sum + item.quantity; 
+  }
+  return sum; 
+}, [items]);
+
 
   const expand = "md";
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -29,9 +36,9 @@ function NavBar() {
     <div>
       <Navbar
         expand={expand}
-        bg="primary"
+        
         data-bs-theme="dark"
-        className="container-fluid "
+        className="container-fluid bg-blue-950 "
       >
         <Container fluid>
           <Navbar.Brand>Ecommerce</Navbar.Brand>

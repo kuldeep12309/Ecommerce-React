@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 body.light {
-    background-color: aliceblue;
-    color: black;
+    background-color: rgb(3, 3, 3);
+    color: rgb(244, 240, 240);
 }
 
 body.dark {
-    background-color: #020202;
-    color: honeydew;
+    background-color: #fdfcfc;
+    color: rgb(7, 7, 7);
 }
