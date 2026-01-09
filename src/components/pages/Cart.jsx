@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useMemo } from "react";
 import { removeCart, clearCart, incrementItem, decrementItem } from "../../app/features/cartSlice";
-
+import EmptyCart from "./EmptyCart";
 const Cart = () => {
   const items = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
@@ -23,9 +23,7 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
-      <h2 className="text-center text-xl light:text-black dark:text-gray-700 mt-24">
-        Your Amazon Cart is empty
-      </h2>
+       <EmptyCart />
     );
   }
 
