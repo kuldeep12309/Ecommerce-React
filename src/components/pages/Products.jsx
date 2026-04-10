@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Products = () => {
-  const { data: products,error,loader} = useCustomQueries("https://fakestoreapi.com/products");
+  const { data: products,error,loader} = useCustomQueries("https://dummyjson.com/products");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Products = () => {
               {/* Product Image */}
               <div className="flex items-center justify-center p-4 h-48">
                 <img
-                  src={product.image}
+                  src={product.thumbnail}
                   alt={product.title}
                   className="max-h-full object-contain"
                 />

@@ -15,7 +15,10 @@ const useCustomQueries = (url) => {
 
       try {
         const response = await axios.get(url);
-        setData(response.data);
+
+        // ✅ sirf ye line change ki hai
+        setData(response.data.products || response.data);
+
       } catch (err) {
         console.error("Network Error:", err);
         setError(true);

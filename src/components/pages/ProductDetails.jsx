@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const { id } = useParams();    
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { data: products, error, loader } = useCustomQueries("https://fakestoreapi.com/products");
+  const { data: products, error, loader } = useCustomQueries('https://dummyjson.com/products');
 
   // Scroll to top on product change
   useEffect(() => {
@@ -49,7 +49,7 @@ const ProductDetails = () => {
         {/* Product Image */}
         <div className="flex-1 flex justify-center items-center bg-gray-50 p-4 rounded-lg shadow">
           <img
-            src={product.image}
+            src={product.thumbnail}
             alt={product.title}
             loading="lazy"
             className="h-80 object-contain"
@@ -101,7 +101,7 @@ const ProductDetails = () => {
             >
               <div className="bg-gray-50 p-2 rounded-lg flex justify-center items-center w-full h-32 mb-2">
                 <img
-                  src={prod.image}
+                  src={prod.thumbnail}
                   alt={prod.title}
                   className="max-h-full object-contain"
                 />

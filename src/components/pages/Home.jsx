@@ -5,7 +5,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const navigate = useNavigate();
-  const {data: products,error,loader,} = useCustomQueries("https://fakestoreapi.com/products");
+  const {data: products,error,loader,} = useCustomQueries("https://dummyjson.com/products");
 
   if (loader) {
     return (
@@ -63,7 +63,7 @@ const Home = () => {
               className="flex-shrink-0 w-48 h-48 cursor-pointer hover:scale-105 transition-transform"
             >
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt={product.title}
                 loading="lazy"
                 className="w-full h-full object-contain rounded-lg shadow-lg"
@@ -84,7 +84,7 @@ const Home = () => {
               className="cursor-pointer hover:scale-105 transition-transform"
             >
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt={product.title}
                 loading="lazy"
                 className="w-full h-48 object-contain rounded-lg shadow-lg"
@@ -111,7 +111,7 @@ const Home = () => {
               className="flex-shrink-0 w-48 h-48 cursor-pointer hover:scale-105 transition-transform"
             >
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt={product.title}
                 loading="lazy"
                 className="w-full h-full object-contain rounded-lg shadow-lg"

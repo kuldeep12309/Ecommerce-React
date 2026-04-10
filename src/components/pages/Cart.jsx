@@ -43,7 +43,7 @@ const Cart = () => {
             >
               <div className="col-span-3 sm:col-span-2">
                 <img
-                  src={item.image}
+                  src={item.thumbnail}
                   alt={item.title}
                   className="w-20 h-20 object-contain"
                 />
